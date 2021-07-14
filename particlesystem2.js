@@ -21,11 +21,11 @@ class particle {
         circle(this.x, this.y, this.diameter);
     }
     update() {
-        if (this.color[3] <= 0 || this.y < 0/* -windowHeight  / 2*/ || this.x < 0 || this.x > windowWidth) {
-            /* this.y = 0// */this.y = mouseY;
-            /* this.x = 0// */this.x = mouseX;
+        if (this.color[3] <= 0 || this.y < -windowHeight  / 2 || this.x < -windowWidth/2 || this.x > windowWidth/2) {
+            this.y = 0//
+            this.x = 0//
             this.color[3] = 200;
-
+            
         }
         else {
             this.y -= this.vy;
@@ -57,7 +57,7 @@ function setup() {
     sliderg.position(0,windowHeight+25);
     sliderb.position(0,windowHeight+40);
     for (let i = 0; i < max; ++i) {
-        arr.push(new particle(-1, -1, Math.random() * 20 + 20, random(sliderr.value(), sliderr.value() + 50), random(sliderg.value(), sliderg.value() + 50), random(sliderb.value(), sliderb.value() + 50)));
+        arr.push(new particle(0, 0, Math.random() * 20 + 20, random(sliderr.value(), sliderr.value() + 50), random(sliderg.value(), sliderg.value() + 50), random(sliderb.value(), sliderb.value() + 50)));
     }
 }
 
@@ -65,7 +65,7 @@ function setup() {
 
 function draw() {
     background(225);
-    //translate(windowWidth / 2, windowHeight / 2);
+    translate(windowWidth / 2, windowHeight / 2);
     //d.show();
     //d.update();
     for (let i = 0; i < j; ++i) {
