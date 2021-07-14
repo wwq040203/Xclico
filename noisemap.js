@@ -1,6 +1,6 @@
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
-    debugMode();
+    //debugMode();
     for (let i = 0; i < 5; ++i) {
         off[i] = random() * 10;
     }
